@@ -33,7 +33,7 @@ export default function ChatBot() {
 
   return (
     <>
-      <Card className="w-full pb-10 flex flex-col shadow-2xl pt-0 border-0 bg-slate-200">
+      <Card className="w-full h-[80%] pb-10 flex flex-col shadow-2xl pt-0 border-0 bg-slate-200">
 
         <CardHeader className="bg-gradient-to-br from-orange-600 to-orange-300 text-black rounded-t-lg py-6">
           <CardTitle className="flex items-center justify-center gap-2 text-xl font-semibold tracking-wider">
@@ -45,8 +45,8 @@ export default function ChatBot() {
           </p>
         </CardHeader>
 
-        <CardContent className="p-0">
-          <ScrollArea className="h-full p-6">
+        <CardContent className="p-0 overflow-y-scroll pipi">
+          <ScrollArea className="p-6 pipi">
             <div className="space-y-4">
               {messages.length === 0 && (
                 <div className="text-center text-gray-500 py-8">
@@ -72,7 +72,7 @@ export default function ChatBot() {
                     </div>
 
                     <div
-                      className={`border border-slate-300 shadow-xl rounded-lg p-4 ${message.role === "user" ? "bg-orange-200 text-white" : "bg-gray-100 text-gray-800"
+                      className={`border border-slate-300 shadow-xl rounded-lg p-4 ${message.role === "user" ? "bg-orange-200" : "bg-gray-100 text-gray-800"
                         }`}
                     >
                       {message.content && <p className="whitespace-pre-wrap">{message.content}</p>}
